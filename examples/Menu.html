@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="styles/style.css" charset="utf-8">
     </head>
     <body>
-        <p>Right click to toggle context menu</p>
+        <p>Right click to toggle context menu1</p>
         <script src="../node_modules/react/dist/react-with-addons.js" charset="utf-8"></script>
         <script src="../node_modules/react/dist/JSXTransformer.js" charset="utf-8"></script>
         <script src="../dist/react-ui.js" charset="utf-8"></script>
@@ -14,20 +14,36 @@
             var Menu = ReactUI.Menu;
 
             function contextMenuClick(name, path, data) {
-                console.log('Menu item clicked: ', arguments);
+                console.log('Menu item clicked: ',name);
             }
             document.oncontextmenu = function (evt) {
                 evt.preventDefault();
-
                 Menu.show(evt, {
                     options: [
-                        'Menu Item 1',
+                        'Menu Item 11',
+						'Menu Item 12',
+						'Menu Item 13',
+						'Menu Item 14',
+						'Menu Item 15',
+						'Menu Item 16',
+						'Menu Item 17',
+						'Menu Item 18',
+						'Menu Item 19',
+						'Menu Item 20',
+						'Menu Item 21',
+						'Menu Item 22',
+						'Menu Item 23',
+                        '__seperator__',
                         'Menu Item 2',
-                        'Menu Item 3',
+                        {
+                            title:'Menu Item 3',
+                            //chose:true
+                        },
                         '__seperator__',
                         {
                             title: 'Menu Group',
                             style: {'color': '#dc5e21'},
+                            chose:true,
                             children: [
                                 'Apple',
                                 'Banana',
@@ -36,7 +52,7 @@
                                 {
                                     title: 'Meat',
                                     children: [
-                                        'Mutton', 'Beaf', 'Pock'
+                                        {title:'Mutton', chose:true},'Beaf', 'Pock'
                                     ]
                                 }
                             ]

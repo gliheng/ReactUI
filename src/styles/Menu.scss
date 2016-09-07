@@ -56,6 +56,10 @@ $radius: 4px;
             background-color: #ddd;
             margin-left: 1.6em;
         }
+        li.arrow {
+            height: 15px;
+
+        }
     }
 
     .ico.gt {
@@ -75,5 +79,41 @@ $radius: 4px;
         top: 0;
         left: 0;
         transform: rotate(45deg);
+    }
+
+    .ico.top {
+        display: block;
+        top: 50%;
+        left: 50%;
+        margin-top: -5px;
+    }
+    .ico.top::after {
+        content: "";
+        display: block;
+        width: 8px;
+        height: 8px;
+        border: 2px solid black;
+        border-width: 1px 1px 0 0;
+        top: 0;
+        left: 0;
+        transform: rotate(316deg);
+    }
+
+    .ico.bottom {
+        display: block;
+        top: 50%;
+        left: 50%;
+        margin-top: -5px;
+    }
+    .ico.bottom::after {
+        content: "";
+        display: block;
+        width: 8px;
+        height: 8px;
+        border: 2px solid black;
+        border-width: 1px 1px 0 0;
+        top: 0;
+        left: 0;
+        transform: rotate(134deg);
     }
 }
