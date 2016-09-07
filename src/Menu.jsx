@@ -157,39 +157,6 @@ let Menu = React.createClass({
         if (com) com.hide();
     },
 
-    renderMenuItem(option, idx) {
-        var label = option,
-            style,
-            chose,
-            subMenu;
-
-        if (label == SEP) {
-            return [<li className="sep" />, ++idx];
-        }
-
-        if (typeof option == 'object') {
-            // generate children
-            label = [option.title];
-            chose = option.chose;
-            if (Array.isArray(option.children)) {
-                label.push(<i className="ico gt"></i>);
-                subMenu = <Menu ref={`child-${idx}`} idx={idx} options={option.children} parent={this}/>;
-            }
-            style = option.style;
-        }
-
-        var item = <li
-            className={chose ? "on" : ""}
-            key={idx}
-            style={style}
-            data-idx={idx}
-            onMouseEnter={this.onHoverMenuItem}
-            onMouseLeave={this.onLeaveMenuItem}
-            onClick={this.onClick}>{label}{subMenu}</li>
-
-        return [item, ++idx];
-    },
-
     render() {
         var className = 'Menu ' + (this.state.show ? 'Show' : 'Hide'),
             options = this.state.options || this.props.options,
